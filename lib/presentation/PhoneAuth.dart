@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:split_app/custom/CustomButton.dart';
+import 'package:split_app/custom/CustomScaffold.dart';
 import 'package:split_app/custom/CustomTextField.dart';
-import 'package:split_app/utils/Global.dart';
 import 'package:split_app/utils/StringValues.dart';
 
 class PhoneAuth extends StatefulWidget {
@@ -17,19 +16,17 @@ class _PhoneAuthState extends State<PhoneAuth> {
   String phoneNumber = "";
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(builder: (BuildContext context, Widget? child) {
-      return Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
+    return CustomScaffold(child: Container(
+            color: Colors.white,
             padding: const EdgeInsets.all(32),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 64,
                 ),
-                Text(
+                const Text(
                   "Enter Phone Number",
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
                 ),
@@ -52,14 +49,11 @@ class _PhoneAuthState extends State<PhoneAuth> {
                     visiblepostIcon: false,
                     labelText: "Send Otp",
                     onTap: () {
-                      authService.sendSms(phoneNumber: "+91"+phoneNumber);
                     },
                     containerColor: Colors.orange)
               ],
             ),
           ),
-        ),
-      );
-    });
+    );
   }
 }

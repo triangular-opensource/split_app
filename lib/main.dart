@@ -2,13 +2,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:split_app/presentation/homscreen/HomeScreen.dart';
 import 'package:split_app/presentation/PhoneAuth.dart';
 import 'package:split_app/utils/StringValues.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await ScreenUtil.ensureScreenSize();
-  await Firebase.initializeApp();
+void main() {
   runApp(const MyApp());
 }
 
@@ -24,9 +22,10 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(builder: (BuildContext context, Widget? child) {
       return MaterialApp(
           title: StringValues.appName,
-          initialRoute: PhoneAuth.routeNamed,
+          initialRoute: HomeScreen.routeNamed,
           routes: {
             PhoneAuth.routeNamed: (BuildContext context) => const PhoneAuth(),
+            HomeScreen.routeNamed: (BuildContext context) => const HomeScreen(),
           },
           debugShowCheckedModeBanner: false);
     });
