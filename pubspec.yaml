@@ -37,7 +37,7 @@ dependencies:
   firebase_auth: ^4.1.1
   cupertino_icons: ^1.0.2
   riverpod: ^2.3.6
-
+  flutter_awesome_calculator: ^1.0.0+1
 dev_dependencies:
   flutter_test:
     sdk: flutter

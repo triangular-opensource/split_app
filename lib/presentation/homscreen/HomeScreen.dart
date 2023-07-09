@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:split_app/custom/CustomScaffold.dart';
 import 'package:split_app/presentation/homscreen/homepages/Activity.dart';
 import 'package:split_app/presentation/homscreen/homepages/Friend.dart';
 import 'package:split_app/presentation/homscreen/homepages/Group.dart';
@@ -80,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   color: currentPage == index
                       ? Colors.white
                       : Colors.black,
-                  size: ScreenUtil().setHeight(32),
+                  size: setHeight(32),
                 ),
               ),
             ),
@@ -97,6 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[Expanded(child: _getBody()), _getBottomBar()],
         ),
         resizeToAvoidBottomInset: false,
+        
       ));
   
   }
