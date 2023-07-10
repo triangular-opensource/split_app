@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_awesome_calculator/flutter_awesome_calculator.dart';
-import 'package:split_app/utils/Global.dart';
 import 'package:split_app/utils/StringValues.dart';
 
 class Calculator extends StatelessWidget {

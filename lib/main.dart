@@ -1,13 +1,29 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:split_app/firebase_options.dart';
 import 'package:split_app/presentation/homscreen/HomeScreen.dart';
 import 'package:split_app/presentation/PhoneAuth.dart';
 import 'package:split_app/presentation/pages/Calculator.dart';
+import 'package:split_app/utils/GlobalFunctions.dart';
 import 'package:split_app/utils/StringValues.dart';
 
-void main() {
+
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  await FirebaseApp;
+}
+
+void main() async{
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      showUpToast("new message from pigeon");
+  });
+
   runApp(const MyApp());
 }
 

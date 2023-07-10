@@ -38,6 +38,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   riverpod: ^2.3.6
   flutter_awesome_calculator: ^1.0.0+1
+  firebase_messaging: ^14.6.4
+  fluttertoast: ^8.1.2
+  permission_handler: ^10.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
